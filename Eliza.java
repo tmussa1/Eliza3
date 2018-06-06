@@ -153,25 +153,23 @@ public class Eliza {
 
     public static String pigLatin(String sentence){ //helper function for pig latin
         String [] stgarray = sentence.split(" ", -2);
-        int k = 0, j = 0, p = 0;
+        int p = 0;
         String word = "";
         String result = "";
         char ch;
 
-        while(k < stgarray.length){
-            while(j < stgarray[k].length()){ //Iterate through the String array in a 2D manner
+        for( int k = 0; k < stgarray.length; k++){
+            for(int j = 0; j < stgarray[k].length(); j++) {
                 ch = stgarray[k].charAt(j);
-                if( ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
                     p = j;
                     break;
                 }
-                j++;
             }
-            String pre = stgarray[k].substring(p); //shift the letters around
-            String post = stgarray[k].substring(0, p);
-            word = pre + post + "ay";
-            result = result + " " + word; //append the words back to form a sentence
-            k++;
+                String pre = stgarray[k].substring(p, stgarray[k].length()); //shift the letters around
+                String post = stgarray[k].substring(0, p);
+                word = pre + post + "ay";
+                result = result + " " + word; //append the words back to form a sentence
         }
         return result;
     }
