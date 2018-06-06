@@ -161,7 +161,7 @@ public class Eliza {
         for( int k = 0; k < stgarray.length; k++){
             for(int j = 0; j < stgarray[k].length(); j++) {
                 ch = stgarray[k].charAt(j);
-                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {//break when you hit a vowel
                     p = j;
                     break;
                 }
