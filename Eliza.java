@@ -166,9 +166,14 @@ public class Eliza {
                     break;
                 }
             }
-                String pre = stgarray[k].substring(p, stgarray[k].length()); //shift the letters around
-                String post = stgarray[k].substring(0, p);
-                word = pre + post + "ay";
+            String pre = stgarray[k].substring(p, stgarray[k].length()); //shift the letters around
+            String post = stgarray[k].substring(0, p);
+            if(p != 0) {
+                word = pre + post + "ay"; //for words starting with consonants
+            } else {
+                word = post + pre + "yay"; //for words starting with vowels
+            }
+
                 result = result + " " + word; //append the words back to form a sentence
         }
         return result;
